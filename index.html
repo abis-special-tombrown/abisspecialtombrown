@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABIS SPECIAL TOMBROWN — Amasaman, Accra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"> ABIS SPECIAL TOMBROWN</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html"> 🛒 <span id="cartCount">0</span></a>
+      <a href="history.html">History</a>
+    </nav>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+  </div>
+</header>
+
+<!-- ===== HERO SLIDESHOW ===== -->
+<div class="hero-slideshow" id="heroSlideshow">
+  <div class="slide active">
+    <img src="images/normal.jpg" alt="Normal Tombrown">
+    <div class="slide-inner">
+      <h2>Healthy &amp; Nutritious Tom Brown</h2>
+      <p>Made from natural grains to support strong growth and energy.</p>
+      <a class="btn" href="products.html">Shop Now</a>
+    </div>
+  </div>
+  <div class="slide">
+    <img src="images/carrot.jpg" alt="Carrot Tombrown">
+    <div class="slide-inner">
+      <h2>Rich in Vitamins</h2>
+      <p>Our carrot mix helps improve growth and body strength.</p>
+      <a class="btn" href="products.html">View Products</a>
+    </div>
+  </div>
+  <div class="slide">
+    <img src="images/beetroot.jpg" alt="Beetroot Tombrown">
+    <div class="slide-inner">
+      <h2>Boost Your Blood &amp; Energy</h2>
+      <p>Beetroot mix helps improve blood levels and energy.</p>
+      <a class="btn" href="contact.html">Order Now</a>
+    </div>
+  </div>
+</div>
+
+<div class="slideshow-controls">
+  <button id="prevSlide">&#8249;</button>
+  <button id="nextSlide">&#8250;</button>
+</div>
+
+<!-- ===== FEATURED PRODUCTS ===== -->
+<section class="featured container">
+  <h2>Featured Products</h2>
+  <p class="section-sub">Handcrafted daily with fresh, natural ingredients.</p>
+  <div class="product-grid" id="featuredGrid"></div>
+</section>
+
+<!-- ===== PRODUCT SHOWCASE ===== -->
+<section class="hero">
+  <h2>Healthy &amp; Nutritious</h2>
+  <div class="hero-cards">
+    <div class="hero-card">
+      <img src="images/normal-big.jpg" alt="Normal Tombrown">
+      <p>Normal Tombrown</p>
+    </div>
+    <div class="hero-card">
+      <img src="images/carrot-big.jpg" alt="Carrot Tombrown">
+      <p>Tombrown with Carrot</p>
+    </div>
+    <div class="hero-card">
+      <img src="images/beetroot-big.jpg" alt="Beetroot Tombrown">
+      <p>Tombrown with Beetroot</p>
+    </div>
+  </div>
+  <h3>Fresh, natural and locally made Tom Brown in Ghana 🇬🇭</h3>
+</section>
+
+<!-- ===== INGREDIENTS ===== -->
+<div class="info-strip">
+  <div style="max-width:800px;margin:auto;">
+    <h1>INGREDIENTS</h1>
+    <p>Carrot &nbsp;·&nbsp; Soya Beans &nbsp;·&nbsp; Wheat &nbsp;·&nbsp; Oat &nbsp;·&nbsp; Local Rice</p>
+  </div>
+</div>
+
+<!-- ===== HOW TO PREPARE ===== -->
+<section class="section">
+  <h1>HOW TO PREPARE</h1>
+  <p>1. Add cold water and stir until there are no lumps.</p>
+  <p>2. Pour paste into boiling water and stir properly.</p>
+  <p>3. Stir while pouring to avoid lumps and leave to boil for at least five minutes.</p>
+  <p>4. Add sugar (if preferred) and enjoy it.</p>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-container">
+    <h2> ABIS SPECIAL TOMBROWN</h2>
+    <p>Amasaman - Accra, Ghana</p>
+    <p>For Bulk Purchase: <strong style="color:var(--gold)">0242977037</strong></p>
+    <p>Delivery Within Accra Available </p>
+    
+    <p class="copyright">© 2026 ABIS SPECIAL TOMBROWN — Made with love in Ghana 🇬🇭</p>
+  </div>
+</footer>
+
+<!-- ===== COOKIE BANNER ===== -->
+<div id="cookie" class="cookie">
+   This website uses cookies for a better experience.
+  <button onclick="acceptCookies()">Accept</button>
+</div>
+
+<!-- ===== PROMO POPUP ===== -->
+<div id="promoPopup" class="promo-popup">
+  <div class="promo-box">
+    <button class="close-btn" onclick="closePromo()">✕</button>
+    <div class="promo-emoji">🎉</div>
+    <h2>ABIS SPECIAL TOMBROWN</h2>
+    <p class="promo-text">Healthy, Natural &amp; Made in Ghana 🇬🇭</p>
+    <div class="promo-badge">10% OFF</div>
+    <p class="promo-text">Sign up and get 10% off your first order!</p>
+    <input type="email" placeholder="Enter your email address">
+    <button onclick="submitPromoEmail()">Claim My Discount </button>
+    <button class="promo-skip" onclick="closePromo()">No thanks</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

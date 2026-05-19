@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed — ABIS SPECIAL TOMBROWN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"> ABIS SPECIAL TOMBROWN</a>
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+    </nav>
+  </div>
+</header>
+
+<div class="thankyou">
+
+  <div class="big-icon"></div>
+  <h1>Order Confirmed!</h1>
+  <h2 id="orderID"></h2>
+
+  <div class="order-details">
+    <p><strong>👤 Name:</strong> <span id="custName"></span></p>
+    <p><strong>📍 Location:</strong> <span id="custLocation"></span></p>
+    <p><strong>📞 Phone:</strong> <span id="custPhone"></span></p>
+    <p><strong>🏠 Address:</strong> <span id="custAddress"></span></p>
+    <p><strong>📅 Date:</strong> <span id="orderDate"></span></p>
+  </div>
+
+  <h3>🛒 Items Ordered</h3>
+  <div id="orderItems"></div>
+
+  <div style="margin:14px 0;font-family:'Nunito',sans-serif;">
+    <p style="color:var(--text-mid);margin:6px 0;">
+       Delivery Fee: <strong style="color:var(--brown)">GH&#8373;<span id="deliveryFee"></span></strong>
+    </p>
+    <p style="font-size:1.2rem;color:var(--brown-dark);font-weight:800;margin-top:8px;">
+       Total: GH&#8373;<span id="finalTotal"></span>
+    </p>
+  </div>
+
+  <div id="momoInstructions"></div>
+
+  <div class="thankyou-btns">
+    <button onclick="sendToWhatsApp()" class="btn"> Send Order via WhatsApp</button>
+    <a href="index.html" class="btn" style="background:var(--brown);"> Back to Home</a>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+  var order = JSON.parse(localStorage.getItem("lastOrder"));
+
+  if (order) {
+    document.getElementById("orderID").innerText      = "Order ID: " + order.id;
+    document.getElementById("custName").innerText     = order.name;
+    document.getElementById("custLocation").innerText = order.location;
+    document.getElementById("deliveryFee").innerText  = order.delivery;
+    document.getElementById("finalTotal").innerText   = order.total;
+    document.getElementById("custPhone").innerText    = order.phone;
+    document.getElementById("custAddress").innerText  = order.address;
+    document.getElementById("orderDate").innerText    = order.date;
+
+    var itemsDiv = document.getElementById("orderItems");
+    order.items.forEach(function (item) {
+      itemsDiv.innerHTML += '<p>' + item.name + ' — GH&#8373;' + item.price + '</p>';
+    });
+
+    if (order.payment === "Mobile Money") {
+      document.getElementById("momoInstructions").innerHTML =
+        '<div class="momo-box">' +
+        '<h3>📱 Mobile Money Payment</h3>' +
+        '<p>Please send payment to:</p>' +
+        '<p><strong>Number:</strong> 0242977037</p>' +
+        '<p><strong>Name:</strong> ABIS SPECIAL TOMBROWN</p>' +
+        '<p><strong>Amount:</strong> GH&#8373;' + order.total + '</p>' +
+        '<p style="margin-top:8px;color:var(--green);font-weight:700;">After payment, tap the WhatsApp button below to confirm your order.</p>' +
+        '</div>';
+    }
+  }
+</script>
+</body>
+</html>

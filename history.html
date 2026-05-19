@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order History — ABIS SPECIAL TOMBROWN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"> ABIS SPECIAL TOMBROWN</a>
+    <nav id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html"> 🛒 <span id="cartCount">0</span></a>
+      <a href="history.html" class="active">History</a>
+    </nav>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+  </div>
+</header>
+
+<div class="history-wrap">
+
+  <div class="history-title">
+    <h2> Order History</h2>
+  </div>
+
+  <div id="historyContainer"></div>
+
+  <button class="clear-btn" onclick="clearHistory()"> Clear History</button>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+  var historyData = JSON.parse(localStorage.getItem("orderHistory")) || [];
+  var container   = document.getElementById("historyContainer");
+
+  if (historyData.length === 0) {
+    container.innerHTML =
+      '<div class="empty-history">' +
+      '<div class="icon"></div>' +
+      '<p>No orders yet. <a href="products.html" style="color:var(--brown);font-weight:700;">Start shopping →</a></p>' +
+      '</div>';
+  } else {
+    var reversed = historyData.slice().reverse();
+    reversed.forEach(function (order) {
+      var itemsHTML = order.items.map(function (item) {
+        return '<p>' + item.name + ' — GH&#8373;' + item.price + '</p>';
+      }).join('');
+
+      container.innerHTML +=
+        '<div class="history-card">' +
+        '<h3>🆔 ' + order.id + '</h3>' +
+        '<p><strong>👤 Name:</strong> '     + order.name     + '</p>' +
+        '<p><strong>📍 Location:</strong> ' + order.location + '</p>' +
+        '<p><strong>📞 Phone:</strong> '    + order.phone    + '</p>' +
+        '<p><strong>💳 Payment:</strong> '  + order.payment  + '</p>' +
+        '<p><strong>🚚 Delivery:</strong> GH&#8373;' + order.delivery + '</p>' +
+        '<p><strong>💰 Total:</strong> GH&#8373;'    + order.total    + '</p>' +
+        '<p><strong>📅 Date:</strong> '     + order.date     + '</p>' +
+        '<div class="item-list">' + itemsHTML + '</div>' +
+        '</div>';
+    });
+  }
+</script>
+</body>
+</html>

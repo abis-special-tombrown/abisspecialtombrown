@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — ABIS SPECIAL TOMBROWN</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html">ABIS SPECIAL TOMBROWN</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">🛒 <span id="cartCount">0</span></a>
+      <a href="history.html">History</a>
+    </nav>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+  </div>
+</header>
+
+<!-- PAGE BANNER -->
+<div class="page-title">
+  <h2>Our Products</h2>
+  <p>All varieties of Abis Special Tombrown — naturally made, freshly prepared.</p>
+</div>
+
+<!-- SEARCH + FILTER -->
+<div class="search-filter">
+  <input type="text" id="searchInput" placeholder="🔍  Search products..." onkeyup="searchProducts()">
+  <select onchange="filterProducts(this.value)">
+    <option value="all">All Sizes</option>
+    <option value="small">Small</option>
+    <option value="medium">Medium</option>
+    <option value="big">Big</option>
+  </select>
+</div>
+
+<!-- PRODUCTS GRID — loaded from database by script.js -->
+<div class="products" id="productsGrid"></div>
+
+<footer class="footer">
+  <div class="footer-container">
+    <h2>ABIS SPECIAL TOMBROWN</h2>
+    <p>Amasaman - Accra, Ghana</p>
+    <p>For Bulk Purchase: <strong style="color:var(--gold)">0242977037</strong></p>
+    <p>Delivery Within Accra Available </p>
+    
+    <p class="copyright">© 2026 ABIS SPECIAL TOMBROWN — Made with love in Ghana 🇬🇭</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
